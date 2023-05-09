@@ -1,4 +1,3 @@
-import 'package:dailytask/app/core/utils/extension.dart';
 import 'package:flutter/material.dart';
 
 class Commons {
@@ -22,63 +21,6 @@ class Commons {
       color: lightThemeLightShadowColor,
       offset: Offset(0, 4),
     );
-  }
-
-  static AppBar appBar(
-    BuildContext context, {
-    String? label,
-    String? taskLabel,
-    Widget? leading,
-    List<Widget>? actions,
-  }) {
-    return AppBar(
-      backgroundColor: Colors.black,
-      elevation: 0,
-      leading: leading,
-      title: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
-        child: Row(
-          children: [
-            const SizedBox(
-              width: 15,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  label ?? "",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.grey,
-                      fontSize: 13.0),
-                ),
-                verticalSpaceTiny,
-                Text(
-                  taskLabel ?? "",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      fontSize: 14.0.sp),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-      actions: actions,
-    );
-  }
-
-  static bool isBottom(
-    ScrollController scrollController, [
-    double scrollOffsetThreshold = 0.7,
-  ]) {
-    if (!scrollController.hasClients) return false;
-    final maxScroll = scrollController.position.maxScrollExtent;
-    final currentScroll = scrollController.offset;
-
-    return currentScroll >= (maxScroll * scrollOffsetThreshold) &&
-        currentScroll > 0;
   }
 }
 
