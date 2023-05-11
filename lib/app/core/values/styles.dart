@@ -35,4 +35,12 @@ class AppTextStyles {
         const Shadow(color: Colors.black, offset: Offset(0.0, 0.2), blurRadius: 0.2),
       ],
       color: Colors.black);
+
+  static final TextStyle header3 = GoogleFonts.lato(
+      fontWeight: FontWeight.w400,
+      fontSize: 12,
+      shadows: [
+        const Shadow(color: Colors.black, offset: Offset(0.0, 0.2), blurRadius: 0.2),
+      ],
+      color: Colors.black);
 }

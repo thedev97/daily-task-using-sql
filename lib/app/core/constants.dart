@@ -1,14 +1,14 @@
+import 'package:dailytask/app/modules/dashboard/dashboard.dart';
+import 'package:dailytask/app/modules/profile/profile.dart';
 import 'values/values.dart';
 import 'package:flutter/material.dart';
 
 String tabSpace = "\t\t\t";
 
-/*final List<Widget> dashBoardScreens = [
-  Dashboard(),
-  ProjectScreen(),
-  NotificationScreen(),
-  SearchScreen()
-];*/
+final List<Widget> screens = [
+  DashBoard(),
+  ProfileView(),
+];
 
 List<Color> progressCardGradient = [
   HexColor.fromHex("#fdf7e9"),

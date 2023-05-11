@@ -1,6 +1,8 @@
 # dailytask
 
-Todo application
+## Note application....
+## Here you can note everything ....
+## CRUD operations has benn implemented.....
 
 ## Getting Started
 
