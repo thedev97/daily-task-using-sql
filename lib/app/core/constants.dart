@@ -22,57 +22,38 @@ List<Color> progressCardGradientList = [
   HexColor.fromHex("EEB2E8"),
 ];
 
-/*Widget buildStackedImages(
-    {TextDirection direction = TextDirection.rtl,
-      String? numberOfMembers,
-      bool? addMore}) {
-  const double size = 50;
-  const double xShift = 20;
+Color getPriorityColor(String priority) {
+  if(priority == "High"){
+    return Colors.redAccent;
+  }else if(priority == "Medium"){
+    return Colors.orangeAccent;
+  }else if(priority == "Low"){
+    return Colors.blueGrey;
+  }else{
+    return Colors.grey.shade500;
+  }
+}
 
-  Container lastContainer = Container(
-      width: 40,
-      height: 40,
-      decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-      child: Center(
-        child: Text(numberOfMembers!,
-            style: GoogleFonts.lato(
-                color: HexColor.fromHex("226AFD"),
-                fontSize: 20,
-                fontWeight: FontWeight.bold)),
-      ));
+Color getStatusColor(String status) {
+  if(status == "Done"){
+    return Colors.green;
+  }else if(status == "Pending"){
+    return Colors.orangeAccent;
+  }else if(status == "WIP"){
+    return Colors.red;
+  }else{
+    return Colors.grey.shade500;
+  }
+}
 
-  Container iconContainer = Container(
-      width: 40,
-      height: 40,
-      decoration: BoxDecoration(
-          color: AppColors.primaryAccentColor, shape: BoxShape.circle),
-      child: const Icon(Icons.add, color: Colors.white));
-
-  final items = List.generate(
-      4,
-          (index) => ProfileDummyImg(
-          color: AppData.groupBackgroundColors[index],
-          dummyType: ProfileDummyTypeImg.Image,
-          image: AppData.profileImages[index],
-          scale: 1.0));
-
-  return StackedWidgets(
-    direction: direction,
-    items: [
-      ...items,
-      lastContainer,
-      (addMore != null) ? iconContainer : SizedBox()
-    ],
-    size: size,
-    xShift: xShift,
-  );
-}*/
-
-/*
-final onlineUsers = List.generate(
-    AppData.onlineUsers.length,
-        (index) => OnlineUser(
-      image: AppData.onlineUsers[index]['profileImage'],
-      imageBackground: AppData.onlineUsers[index]['color'],
-      userName: AppData.onlineUsers[index]['name'],
-    ));*/
+IconData getStatusIcon(String status) {
+  if(status == "Done"){
+    return Icons.check;
+  }else if(status == "Pending"){
+    return Icons.close;
+  }else if(status == "WIP"){
+    return Icons.close;
+  }else{
+    return Icons.close;
+  }
+}

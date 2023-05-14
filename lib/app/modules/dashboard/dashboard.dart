@@ -1,5 +1,6 @@
 import 'package:dailytask/app/core/values/sizes.dart';
 import 'package:dailytask/app/core/values/strings.dart';
+import 'package:dailytask/app/widgets/card/task_card.dart';
 import 'package:flutter/material.dart';
 import 'package:dailytask/app/core/values/images.dart';
 import '../../core/values/values.dart';
@@ -23,6 +24,7 @@ class DashBoard extends StatelessWidget {
               subTitle(),
               searchBox(),
               activityTitle(),
+              getTaskListView(),
             ],
           ),
         ),
@@ -30,7 +32,7 @@ class DashBoard extends StatelessWidget {
     );
   }
 
-  Widget customLine(){
+  Widget customLine() {
     return Image.asset(customLinerImg);
   }
 
@@ -62,6 +64,27 @@ class DashBoard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: sizeHeight * 0.22),
       child: Text(activityTxt.toUpperCase(), style: AppTextStyles.header2),
+    );
+  }
+
+  Widget getTaskListView() {
+    return Padding(
+      padding: EdgeInsets.only(top: sizeHeight * 0.25, bottom: 20),
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        itemCount: 5,
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int position) {
+          return TaskCard(
+            title: taskTitle,
+            date: taskDateTime,
+            description: taskDesc,
+            priority: taskPriority,
+            status: taskStatus,
+          );
+        },
+      ),
     );
   }
 }

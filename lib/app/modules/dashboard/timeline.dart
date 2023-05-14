@@ -40,7 +40,7 @@ class _TimeLineState extends State<TimeLine> {
           //onPressed: _pushAddTodoScreen,
           backgroundColor: tdBlack,
           mini: true,
-          elevation: 2.0,
+          elevation: 3.0,
           onPressed: () => print(''),
           child: const Icon(Icons.add),
         ),
@@ -49,7 +49,7 @@ class _TimeLineState extends State<TimeLine> {
           height: 55,
           child: BottomAppBar(
             notchMargin: 5.0,
-            elevation: 5,
+            elevation: 20,
             shape: const CircularNotchedRectangle(),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               const SizedBox(

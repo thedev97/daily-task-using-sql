@@ -2,6 +2,8 @@ library values;
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../constants.dart';
 part './app-colors.dart';
 part './styles.dart';
 part './button_styles.dart';
